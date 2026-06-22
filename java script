@@ -1,1 +1,21 @@
+// Change background color button
+const changeColorBtn = document.getElementById("change-color-btn");
+const colors = ["#f4f4f4", "#ffe0b2", "#c8e6c9", "#bbdefb", "#f8bbd0"];
 
+changeColorBtn.addEventListener("click", () => {
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+  document.body.style.backgroundColor = randomColor;
+});
+
+// Contact form submission
+const contactForm = document.getElementById("contact-form");
+
+contactForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+
+  alert(`Thanks ${name}! Your message has been sent.\nEmail: ${email}\nMessage: ${message}`);
+  contactForm.reset();
+});
